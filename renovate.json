@@ -1,0 +1,21 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "timezone": "Europe/Berlin",
+  "schedule": [
+    "* 8-11 * * 5"
+  ],
+  "semanticCommits": "enabled",
+  "packageRules": [
+    {
+      "description": "Hold a release back for three days, long enough for a broken or compromised one to be pulled before it is proposed. A release without a timestamp is held too.",
+      "matchManagers": [
+        "github-actions"
+      ],
+      "minimumReleaseAge": "3 days",
+      "minimumReleaseAgeBehaviour": "timestamp-required"
+    }
+  ]
+}
