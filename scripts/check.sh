@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Checks the corpus layout: every replay sits in a version folder, is small
-# enough, has a plain name and a row in its folder's INDEX.md, and every row
-# names a replay that exists.
+# Checks the corpus layout: every tracked entry is a regular file, every
+# replay sits in a version folder, is small enough, has a plain name and a row
+# in its folder's INDEX.md, and every row names a replay that exists.
 set -euo pipefail
 shopt -s nullglob
 cd "$(dirname "$0")/.."
@@ -17,6 +17,12 @@ fail() {
 rows() {
 	sed -n 's/^| `\([^`]*\)` |.*/\1/p' "$1" 2>/dev/null || true
 }
+
+# No symlinks or submodules: forts-replay's tests read every file here.
+while IFS= read -r -d '' e; do
+	mode=${e%% *}
+	[[ $mode == 100644 || $mode == 100755 ]] || fail "${e#*$'\t'}: not a regular file (mode $mode)"
+done < <(git ls-files -s -z)
 
 while IFS= read -r -d '' f; do
 	f=${f#./}
