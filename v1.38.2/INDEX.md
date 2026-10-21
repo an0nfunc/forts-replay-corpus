@@ -1,0 +1,28 @@
+# v1.38.2
+
+Header version 1383. Single-player games by @an0nfunc, recorded in October 2026. All are on Abyss except `swarm-missiles.fwr`, on Bombard. Sandbox games unless the row says skirmish, mostly with unlimited resources and fast building turned on.
+
+| File | Kind | What happens |
+|---|---|---|
+| `camera.fwr` | basic | Zooming, panning and moving the pointer. No commands. |
+| `devices.fwr` | basic | Each device slot placed once, except the metal mine. |
+| `fire-mg-mortar.fwr` | basic | A machine gun and a mortar placed, then each fired three times. |
+| `skirmish-idle.fwr` | basic | Skirmish against the Easy AI with the Fulminator commander. The player does nothing. |
+| `skirmish-quit.fwr` | basic | Skirmish against the Normal AI, ended by quitting from the pause menu. No result is recorded. |
+| `struts-materials-1-4.fwr` | basic | For material slots 1 to 4: one strut out to a new node, one strut between two existing nodes. |
+| `struts-materials-5-7.fwr` | basic | The same for slots 5 to 7. Not every drag built a strut. |
+| `swap-material.fwr` | basic | A strut's material swapped from wood to armour to bracing and back to wood. |
+| `tech.fwr` | basic | Two technology buildings placed. |
+| `upgrade-turbine.fwr` | basic | An upgrade centre built, then a wind turbine upgraded. |
+| `upgrade-weapons.fwr` | basic | A machine gun upgraded to a minigun, a mortar to a heavy mortar. |
+| `weapons-1-3.fwr` | basic | Weapon slots 1 to 3 placed once each. |
+| `ammo-select.fwr` | edge case | A weapon that takes ammo: each ammo type selected, then fired (0xdc). |
+| `area-repair.fwr` | edge case | A mortar damaged, then repaired with area repair (a click and a drag) and with its own repair button. Area repair over undamaged structure records nothing (0xe0, 0xd4). |
+| `hotkeys.fwr` | edge case | Weapon and device hotkeys from the input options, one key every 4 seconds. |
+| `laser-sight.fwr` | edge case | Skirmish with the Eagle Eye commander: a minigun's laser sight toggled, its bias moved, then fired. |
+| `mg-fire-variants.fwr` | edge case | A machine gun fired in different ways: press and hold, drag, group selection, clicking the selected gun again, and a target outside its arc then inside (0xc7 and 0xca). |
+| `pause-skirmish.fwr` | edge case | Skirmish against the Easy AI, paused and resumed with the HUD button and the pause key. Pausing records nothing. |
+| `portal-link.fwr` | edge case | Two portal triangles linked, unlinked, linked again, reversed, and passthrough turned on and off (0xd7, 0xd8). |
+| `refused-builds.fwr` | edge case | Four builds the game refuses: a battery in open sky, a battery on an occupied spot, swarm missiles away from ground, a strut that is too long. Refused builds record nothing. |
+| `swarm-missiles.fwr` | edge case | Swarm missile launchers fired without a spotter, then at a point a sniper marks, then double-clicked while reloading (0x94, 0xdb). Weapon doors open and close on their own (0xd1). |
+| `toggles.fwr` | edge case | Shield and door struts opened and closed, and a machine gun's door shut and opened (0xd1). |
