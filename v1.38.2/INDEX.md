@@ -1,12 +1,16 @@
 # v1.38.2
 
-Header version 1383. Single-player games by @an0nfunc, recorded in October 2026. All are on Abyss except `swarm-missiles.fwr`, on Bombard. Sandbox games unless the row says skirmish, mostly with unlimited resources and fast building turned on.
+Header version 1383. Single-player games by @an0nfunc. All are on Abyss except `swarm-missiles.fwr`, on Bombard. Sandbox games unless the row says skirmish, mostly with unlimited resources and fast building turned on.
 
 | File | Kind | What happens |
 |---|---|---|
+| `abyss-bot-278f.fwr` | basic | Skirmish against the AI, 11 seconds. The player gives no commands. |
+| `abyss-bot-974f.fwr` | basic | Skirmish against the AI, 39 seconds, which the AI wins. The player deletes struts and nodes. |
 | `camera.fwr` | basic | Zooming, panning and moving the pointer. No commands. |
 | `devices.fwr` | basic | Each device slot placed once, except the metal mine. |
 | `fire-mg-mortar.fwr` | basic | A machine gun and a mortar placed, then each fired three times. |
+| `probe-delete.fwr` | basic | A strut out and one back, a battery placed, then the second strut deleted and the battery scrapped (0xcb, 0xcd, 0xd2, 0xce, 0xd6). |
+| `probe-node.fwr` | basic | Twice: a strut out and one back, then the new node deleted (0xcc). |
 | `skirmish-idle.fwr` | basic | Skirmish against the Easy AI with the Fulminator commander. The player does nothing. |
 | `skirmish-quit.fwr` | basic | Skirmish against the Normal AI, ended by quitting from the pause menu. No result is recorded. |
 | `struts-materials-1-4.fwr` | basic | For material slots 1 to 4: one strut out to a new node, one strut between two existing nodes. |
@@ -23,6 +27,13 @@ Header version 1383. Single-player games by @an0nfunc, recorded in October 2026.
 | `mg-fire-variants.fwr` | edge case | A machine gun fired in different ways: press and hold, drag, group selection, clicking the selected gun again, and a target outside its arc then inside (0xc7 and 0xca). |
 | `pause-skirmish.fwr` | edge case | Skirmish against the Easy AI, paused and resumed with the HUD button and the pause key. Pausing records nothing. |
 | `portal-link.fwr` | edge case | Two portal triangles linked, unlinked, linked again, reversed, and passthrough turned on and off (0xd7, 0xd8). |
+| `probe-dblclick.fwr` | edge case | Three machine guns and a mortar placed; a machine gun with a blocked line of fire, another machine gun and the mortar each double-clicked to fire at once (0xc5, 0xc6, 0xc7, 0xca). A click while the mortar reloads records nothing. |
+| `probe-doors.fwr` | edge case | Door struts built, then a door opened and closed twice (0xd1). |
+| `probe-downgrade-overdrive.fwr` | edge case | Skirmish against the Easy AI with the Overdrive commander: a machine gun upgraded, then downgraded (0xd5). |
+| `probe-ground.fwr` | edge case | A strut that anchors to the cave wall (0xcb). |
+| `probe-mine.fwr` | edge case | One of the fort's mines scrapped, a new one placed on the freed ore spot: a placement without nodes (0xd2). |
+| `probe-move-phantom.fwr` | edge case | Skirmish against the Easy AI with the Phantom commander: a battery moved to the floor above (0xd2). Moving it with the M key records nothing. |
+| `probe-repair.fwr` | edge case | A machine gun and a mortar placed, the machine gun fired four times, then repair on the undamaged mortar and on an undamaged strut. Only the strut's repair is recorded (0xca, 0xd0). |
 | `refused-builds.fwr` | edge case | Four builds the game refuses: a battery in open sky, a battery on an occupied spot, swarm missiles away from ground, a strut that is too long. Refused builds record nothing. |
 | `swarm-missiles.fwr` | edge case | Swarm missile launchers fired without a spotter, then at a point a sniper marks, then double-clicked while reloading (0x94, 0xdb). Weapon doors open and close on their own (0xd1). |
 | `toggles.fwr` | edge case | Shield and door struts opened and closed, and a machine gun's door shut and opened (0xd1). |
