@@ -10,7 +10,7 @@ There is one folder per game version, because each update can change the format.
 
 - **basic**: everyday actions like building, firing and upgrading. A small set per version is enough.
 - **edge case**: something the game records in an unusual way, or doesn't record at all.
-- **breaks fwr**: a replay that makes `fwr` warn or fail.
+- **breaks fwr**: a replay that exposed a bug in `fwr`.
 
 | Folder | Header version | Replays |
 |---|---|---|
@@ -30,7 +30,7 @@ Keep each file under 20 MB. Once merged, a replay is public, including the playe
 
 ## Removal
 
-If you played in one of these replays and want it gone, open an issue naming the file. You don't have to give a reason. The file is removed from the history as well, not just from the latest commit.
+If you played in one of these replays and want it gone, open an issue naming the file. You don't have to give a reason. We delete the file from this repository's whole history, not just the latest commit, and ask GitHub to remove the copies it keeps in pull requests and cached pages. Copies in forks or clones other people made are outside our reach.
 
 ## Legal
 
