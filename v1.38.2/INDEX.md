@@ -1,6 +1,6 @@
 # v1.38.2
 
-Header version 1383. Single-player games by @an0nfunc. All are on Abyss except `swarm-missiles.fwr`, on Bombard. Sandbox games unless the row says skirmish, mostly with unlimited resources and fast building turned on.
+Header version 1383. Single-player games by @an0nfunc. All are on Abyss except `swarm-missiles.fwr` and `swarm-immediate-fire.fwr`, on Bombard. Sandbox games unless the row says skirmish, mostly with unlimited resources and fast building turned on.
 
 | File | Kind | What happens |
 |---|---|---|
@@ -22,6 +22,8 @@ Header version 1383. Single-player games by @an0nfunc. All are on Abyss except `
 | `weapons-1-3.fwr` | basic | Weapon slots 1 to 3 placed once each. |
 | `ammo-select.fwr` | edge case | A weapon that takes ammo: each ammo type selected, then fired (0xdc). |
 | `area-repair.fwr` | edge case | A mortar placed and fired at with a machine gun, then area repair (a click and a drag) over the mortar, and the wrench on an undamaged strut. Only the wrench is recorded (0xd0): area repair over undamaged structure records nothing. |
+| `area-repair-damaged.fwr` | edge case | Skirmish against the Normal AI. After AI fire damages the fort, area repair with one click and one drag over the damaged part (0xe0, three records). It ends as the AI destroys the reactor; no result is recorded. |
+| `device-repair.fwr` | edge case | Skirmish against the Normal AI. After AI fire damages the reactor and a machine gun, each is repaired from its context menu, the reactor three times (0xd4). Ends by quitting. |
 | `hotkeys.fwr` | edge case | Weapon and device hotkeys from the input options, one key every 4 seconds. |
 | `laser-sight.fwr` | edge case | Skirmish with the Eagle Eye commander: a minigun's laser sight toggled, its bias moved, then fired. |
 | `mg-fire-variants.fwr` | edge case | A machine gun fired in different ways: press and hold, drag, group selection, clicking the selected gun again, and a target outside its arc then inside (0xc7 and 0xca). |
@@ -35,5 +37,7 @@ Header version 1383. Single-player games by @an0nfunc. All are on Abyss except `
 | `probe-move-phantom.fwr` | edge case | Skirmish against the Easy AI with the Phantom commander: a battery moved to the floor above (0xd2). Moving it with the M key records nothing. |
 | `probe-repair.fwr` | edge case | A machine gun and a mortar placed, the machine gun fired four times, then repair on the undamaged mortar and on an undamaged strut. Only the strut's repair is recorded (0xca, 0xd0). |
 | `refused-builds.fwr` | edge case | Four builds the game refuses: a battery in open sky, a battery on an occupied spot, swarm missiles away from ground, a strut that is too long. Refused builds record nothing. |
+| `strut-repair.fwr` | edge case | Skirmish against the Normal AI. After AI fire cracks struts, a strut and then a node are repaired with the wrench (0xcf, 0xd0). The AI wins. |
+| `swarm-immediate-fire.fwr` | edge case | A swarm missile launcher and a sniper. The launcher's door item in its menu records nothing. The launcher is fired at the sniper's mark by a click, and with the fire key: 0xc5, a 0xdb 40 frames later, and 0xc6 192 frames after the 0xc5. Its doors open and close on their own around each aim (24 0xd1 records in groups of three, sources 3 and 4). Then its menu's door item is used and the launcher scrapped (0xd6); no 0xd1 accompanies the scrap. |
 | `swarm-missiles.fwr` | edge case | Swarm missile launchers fired without a spotter, then at a point a sniper marks, then double-clicked while reloading (0x94, 0xdb). Weapon doors open and close on their own (0xd1). |
 | `toggles.fwr` | edge case | Shield and door struts opened and closed from their menus (0xd1, source 11). A machine gun's door shut and opened from its menu records nothing. |
