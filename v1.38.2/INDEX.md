@@ -21,7 +21,7 @@ Header version 1383. Single-player games by @an0nfunc. All are on Abyss except `
 | `upgrade-weapons.fwr` | basic | A machine gun upgraded to a minigun, a mortar to a heavy mortar. |
 | `weapons-1-3.fwr` | basic | Weapon slots 1 to 3 placed once each. |
 | `ammo-select.fwr` | edge case | A weapon that takes ammo: each ammo type selected, then fired (0xdc). |
-| `area-repair.fwr` | edge case | A mortar damaged, then repaired with area repair (a click and a drag) and with its own repair button. Area repair over undamaged structure records nothing (0xe0, 0xd4). |
+| `area-repair.fwr` | edge case | A mortar placed and fired at with a machine gun, then area repair (a click and a drag) over the mortar, and the wrench on an undamaged strut. Only the wrench is recorded (0xd0): area repair over undamaged structure records nothing. |
 | `hotkeys.fwr` | edge case | Weapon and device hotkeys from the input options, one key every 4 seconds. |
 | `laser-sight.fwr` | edge case | Skirmish with the Eagle Eye commander: a minigun's laser sight toggled, its bias moved, then fired. |
 | `mg-fire-variants.fwr` | edge case | A machine gun fired in different ways: press and hold, drag, group selection, clicking the selected gun again, and a target outside its arc then inside (0xc7 and 0xca). |
@@ -36,4 +36,4 @@ Header version 1383. Single-player games by @an0nfunc. All are on Abyss except `
 | `probe-repair.fwr` | edge case | A machine gun and a mortar placed, the machine gun fired four times, then repair on the undamaged mortar and on an undamaged strut. Only the strut's repair is recorded (0xca, 0xd0). |
 | `refused-builds.fwr` | edge case | Four builds the game refuses: a battery in open sky, a battery on an occupied spot, swarm missiles away from ground, a strut that is too long. Refused builds record nothing. |
 | `swarm-missiles.fwr` | edge case | Swarm missile launchers fired without a spotter, then at a point a sniper marks, then double-clicked while reloading (0x94, 0xdb). Weapon doors open and close on their own (0xd1). |
-| `toggles.fwr` | edge case | Shield and door struts opened and closed, and a machine gun's door shut and opened (0xd1). |
+| `toggles.fwr` | edge case | Shield and door struts opened and closed from their menus (0xd1, source 11). A machine gun's door shut and opened from its menu records nothing. |
