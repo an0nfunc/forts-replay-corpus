@@ -14,6 +14,7 @@ There is one folder per game version, because each update can change the format.
 
 | Folder | Header version | Replays |
 |---|---|---|
+| [v1.39.0](v1.39.0/INDEX.md) | 1390 | single-player games on Abyss, repeating v1.38.2 ones |
 | [v1.38.2](v1.38.2/INDEX.md) | 1383 | single-player games on Abyss and Bombard |
 | [v1.33](v1.33/INDEX.md) | 1331 | three games from October 2025 |
 
